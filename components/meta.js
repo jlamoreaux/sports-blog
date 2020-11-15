@@ -33,10 +33,7 @@ export default function Meta() {
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
-      <meta
-        name="description"
-        content={`Let's call it Football "Analysis".`}
-      />
+      <meta name="description" content={`Let's call it Football "Analysis".`} />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <script
@@ -55,6 +52,11 @@ export default function Meta() {
           `,
         }}
       />
+      <script
+        data-ad-client="ca-pub-9724511505686860"
+        async
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+      />
     </Head>
-  )
+  );
 }
