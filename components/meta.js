@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import { GA_TRACKING_ID } from '../lib/gtag'
 
 export default function Meta() {
   return (
@@ -37,6 +38,23 @@ export default function Meta() {
         content={`Let's call it Football "Analysis".`}
       />
       <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      {/* Global Site Tag (gtag.js) - Google Analytics */}
+      <script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${GA_TRACKING_ID}', {
+              page_path: window.location.pathname,
+            });
+          `,
+        }}
+      />
     </Head>
   )
 }
