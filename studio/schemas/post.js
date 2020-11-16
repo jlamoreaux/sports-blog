@@ -27,6 +27,13 @@ export default {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
+      fields: [
+        {
+          name: 'caption',
+          type: 'string',
+          title: 'Caption',
+        }
+      ],
       options: {
         hotspot: true
       }
