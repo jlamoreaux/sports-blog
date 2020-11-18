@@ -19,6 +19,7 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  console.log(post)
   const socialTags = {
     ogImage: post.coverImage,
     ogTitle: post.title
