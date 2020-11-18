@@ -19,8 +19,10 @@ export default function Post({ post, morePosts, preview }) {
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />
   }
+  const ogImage = post.coverImage;
+  const ogTitle = post.title;
   return (
-    <Layout preview={preview}>
+    <Layout preview={preview} socialTags={{ ogImage, ogTitle }} >
       <Container>
         <Header />
         {router.isFallback ? (
@@ -40,7 +42,7 @@ export default function Post({ post, morePosts, preview }) {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.body} />
+                <PostBody content={post.body} />
             </article>
 
             <Comments comments={post.comments} />

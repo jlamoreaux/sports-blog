@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import { CMS_NAME, HOME_OG_IMAGE_URL } from '../lib/constants'
+import { SITE_TITLE, HOME_OG_IMAGE_URL } from '../lib/constants'
 import { GA_TRACKING_ID } from '../lib/gtag'
 
-export default function Meta() {
+export default function Meta({ ogImage, ogTitle }) {
   return (
     <Head>
       <link
@@ -34,7 +34,10 @@ export default function Meta() {
       <meta name="theme-color" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <meta name="description" content={`Let's call it Football "Analysis".`} />
-      <meta property="og:image" content={HOME_OG_IMAGE_URL} />
+      <meta property="og:image" content={ogImage} />
+      <meta property="og:title" content={ogTitle} />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:site" content="@OTB_Official" />
       {/* Global Site Tag (gtag.js) - Google Analytics */}
       <script
         async
@@ -43,13 +46,13 @@ export default function Meta() {
       <script
         dangerouslySetInnerHTML={{
           __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_TRACKING_ID}', {
-              page_path: window.location.pathname,
-            });
-          `,
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_TRACKING_ID}', {
+            page_path: window.location.pathname,
+          });
+        `,
         }}
       />
       <script
