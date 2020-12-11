@@ -1,4 +1,4 @@
-# Next.js blog with comment section
+# Next.js blog
 
 Blog with a simple comments section.
 
@@ -20,3 +20,8 @@ npm run start:sanity
 ```
 
 The blog will be running at `http://localhost:3000`, the Studio will run at `http://localhost:3333`.
+=======
+This site is built using the following:
+- [Sanity](https://www.sanity.io/)'s Headless CMS.
+- [Next.js](https://nextjs.org/) React Framework
+- [Tailwind CSS](https://tailwindcss.com/) CSS Framework
